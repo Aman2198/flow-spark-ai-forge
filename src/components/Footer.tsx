@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail, Zap } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Logo } from './Logo';
 
 export function Footer() {
   const footerSections = [
@@ -50,28 +51,22 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-background/50 backdrop-blur-xl border-t border-white/20 dark:border-white/10">
+    <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="relative">
-                <Zap className="h-8 w-8 text-cosmic-500" />
-                <div className="absolute inset-0 h-8 w-8 bg-cosmic-500/20 rounded-full blur-lg"></div>
-              </div>
-              <span className="text-xl font-bold gradient-text">WorkflowAI</span>
-            </div>
-            <p className="text-muted-foreground mb-6 max-w-sm">
-              Automate your workflows with the power of AI. Build, deploy, and scale 
-              intelligent automations that transform how your team works.
+            <Logo size="md" className="mb-4" />
+            <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
+              Build intelligent AI workflows that transform how your team works. 
+              From simple automations to complex multi-step processes.
             </p>
             <div className="flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="h-10 w-10 rounded-full glass-morphism border-white/20 dark:border-white/10 flex items-center justify-center hover:cosmic-glow transition-all duration-300"
+                  className="h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
@@ -83,7 +78,7 @@ export function Footer() {
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="font-semibold mb-4">{section.title}</h3>
+              <h3 className="font-semibold mb-4 text-black dark:text-white">{section.title}</h3>
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
@@ -101,7 +96,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-white/20 dark:border-white/10 flex flex-col md:flex-row items-center justify-between">
+        <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between">
           <p className="text-muted-foreground text-sm">
             © 2024 WorkflowAI. All rights reserved.
           </p>
@@ -113,7 +108,7 @@ export function Footer() {
               System Status
             </a>
             <div className="flex items-center space-x-2">
-              <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse-subtle"></div>
               <span className="text-sm text-muted-foreground">All systems operational</span>
             </div>
           </div>

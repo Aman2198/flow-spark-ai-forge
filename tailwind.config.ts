@@ -19,6 +19,17 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'system': [
+					'-apple-system',
+					'BlinkMacSystemFont',
+					'"Segoe UI"',
+					'Roboto',
+					'"Helvetica Neue"',
+					'Arial',
+					'sans-serif'
+				],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -63,30 +74,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				cosmic: {
-					50: '#f0f0ff',
-					100: '#e6e6ff',
-					200: '#d1d1ff',
-					300: '#b3b3ff',
-					400: '#8080ff',
-					500: '#6366f1',
-					600: '#4f46e5',
-					700: '#4338ca',
-					800: '#3730a3',
-					900: '#312e81',
-				},
-				electric: {
-					50: '#ecfdf5',
-					100: '#d1fae5',
-					200: '#a7f3d0',
-					300: '#6ee7b7',
-					400: '#34d399',
-					500: '#10b981',
-					600: '#059669',
-					700: '#047857',
-					800: '#065f46',
-					900: '#064e3b',
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -113,7 +100,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(20px)'
+						transform: 'translateY(10px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -136,28 +123,23 @@ export default {
 						transform: 'translateY(-10px)'
 					}
 				},
-				'glow': {
+				'pulse-subtle': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)'
+						opacity: '1'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(99, 102, 241, 0.8)'
+						opacity: '0.8'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
+				'fade-in': 'fade-in 0.4s ease-out',
 				'slide-in-right': 'slide-in-right 0.3s ease-out',
-				'float': 'float 3s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite'
 			},
-			backgroundImage: {
-				'cosmic-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-				'electric-gradient': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-				'hero-gradient': 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%)',
-			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
